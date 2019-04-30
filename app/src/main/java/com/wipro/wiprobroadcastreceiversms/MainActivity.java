@@ -1,9 +1,12 @@
 package com.wipro.wiprobroadcastreceiversms;
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,19 +29,27 @@ public class MainActivity extends AppCompatActivity {
         sendMessageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String messagePhoneNumber = String.format("smsto: %s", phoneNumberEditText.getText().toString());
-                String message = messageEditText.getText().toString();
-
-                Intent sendMessageIntent = new Intent(Intent.ACTION_SENDTO);
-                sendMessageIntent.setData(Uri.parse(messagePhoneNumber));
-                sendMessageIntent.putExtra("sms_body", message);
-
-                if (sendMessageIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(sendMessageIntent);
-                } else {
-                    Toast.makeText(MainActivity.this, "Cannot Send SMS!", Toast.LENGTH_SHORT).show();
-                }
+                sendTextMessages();
             }
         });
+    }
+
+    protected void sendTextMessages() {
+        String phoneNumber = String.format("smsto: %s", phoneNumberEditText.getText().toString());
+        String message = messageEditText.getText().toString();
+
+        Log.i("TESTING_SMS_1", "************************************************ TREYING TO SEND SMS!!! *********************************************************");
+
+        Intent smsIntent = new Intent(Intent.ACTION_SENDTO);
+        smsIntent.setData(Uri.parse(phoneNumber));
+        smsIntent.putExtra("sms_body", message);
+
+        if (smsIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(smsIntent);
+        } else {
+            Log.i("TAG_SMS_SENT_ERROR", "Can't resolve app for ACTION_SENDTO Intent");
+        }
+
+        Log.i("TESTING_SMS_2", "************************************************ TREYING TO SEND SMS!!! *********************************************************");
     }
 }
