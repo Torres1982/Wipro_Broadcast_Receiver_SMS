@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Broadcast Receiver SMS</string>
+    <string name="autofill_hint">SMS Message</string>
+    <string name="phone_number_hint">Enter Phone Number</string>
+    <string name="sms_message_hint">Enter Your Message</string>
+    <string name="send_sms">Send SMS</string>
+</resources>

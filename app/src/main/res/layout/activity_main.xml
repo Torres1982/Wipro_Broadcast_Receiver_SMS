@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/lightGreen">
+    <EditText
+        android:id="@+id/edit_text_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fifty_dp_margin"
+        android:layout_marginEnd="@dimen/fifty_dp_margin"
+        android:layout_marginTop="@dimen/fifty_dp_margin"
+        android:hint="@string/phone_number_hint"
+        android:autofillHints="@string/autofill_hint"
+        android:inputType="phone"
+        tools:ignore="LabelFor" />
+    <EditText
+        android:id="@+id/edit_text_sms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fifty_dp_margin"
+        android:layout_marginEnd="@dimen/fifty_dp_margin"
+        android:layout_marginTop="@dimen/thirty_dp_margin"
+        android:hint="@string/sms_message_hint"
+        android:autofillHints="@string/autofill_hint"
+        android:inputType="textMultiLine"/>
+    <Button
+        android:id="@+id/button_send_sms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fifty_dp_margin"
+        android:layout_marginEnd="@dimen/fifty_dp_margin"
+        android:layout_marginTop="@dimen/thirty_dp_margin"
+        android:text="@string/send_sms"
+        android:textColor="@color/white"
+        android:background="@drawable/border" />
+</LinearLayout>

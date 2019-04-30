@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fifty_dp_margin">50dp</dimen>
+    <dimen name="thirty_dp_margin">30dp</dimen>
+    <dimen name="eight_dp_button_radius">8dp</dimen>
+    <dimen name="one_dp_border">1dp</dimen>
+</resources>
